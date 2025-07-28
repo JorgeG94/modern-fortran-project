@@ -74,3 +74,17 @@ make -j install
 
 To run the tests, from the build dir run: `ctest`
 
+
+## CI/CD 
+
+This repo contains a very powerful CI/CD workflow based on gha3mi's work, which you can find [here](https://github.com/gha3mi/setup-fortran-conda/tree/main)
+
+
+## pre-commit hooks
+
+The repo also comes with a pre-commit that will ensure a formatting for your Fortran files. You can install pre-commits by using:
+
+```
+python3 -m pip install pre-commit
+pre-commit install
+```
