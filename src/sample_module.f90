@@ -13,7 +13,6 @@ print *, "Hello there!"
 
 print *, " "
 
-print *, "General Kenobi!"
 
 end subroutine hello_there
 

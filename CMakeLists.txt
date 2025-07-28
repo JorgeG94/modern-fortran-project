@@ -9,7 +9,7 @@ project(
 set(project_name your_project_name)
 set(main_lib ${project_name})
 set(exe_name exe_${project_name})
-set(all_targets main_lib exe_name)
+set(all_targets ${main_lib} ${exe_name})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(GNUInstallDirs)
