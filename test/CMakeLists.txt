@@ -1,6 +1,5 @@
 # Unit testing
-set(tests
-    "base_utils")
+set(tests "base_utils")
 
 set(test-srcs "main_tests.f90")
 foreach(t IN LISTS tests)
@@ -19,10 +18,8 @@ target_include_directories("${project_name}-tester"
 target_link_libraries("${project_name}-tester" PRIVATE "${main_lib}"
                                                        test-drive::test-drive)
 
-
 message(STATUS "Adding the following tests to ctests...")
 foreach(t IN LISTS tests)
   message(STATUS "${project_name}/${t} ${project_name}-tester ${t}")
   add_test("${project_name}/${t}" "${project_name}-tester" "${t}")
 endforeach()
-

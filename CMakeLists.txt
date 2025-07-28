@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 project(
   "YOUR_NAME"
-  LANGUAGES Fortran 
+  LANGUAGES Fortran
   VERSION 0.0
   DESCRIPTION "ADD YOUR DESCRIPTION HERE")
 
@@ -33,7 +33,6 @@ add_library(${main_lib} STATIC)
 # Enable position-independent code for shared-library linking support
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-
 add_subdirectory(src)
 
 if(ENABLE_TESTING)
@@ -41,9 +40,7 @@ if(ENABLE_TESTING)
 endif()
 
 set_target_properties(${main_lib} PROPERTIES Fortran_MODULE_DIRECTORY
-                                          ${CMAKE_BINARY_DIR}/modules)
-
-
+                                             ${CMAKE_BINARY_DIR}/modules)
 
 add_executable(${exe_name} ${PROJECT_SOURCE_DIR}/app/main.f90)
 target_include_directories(${exe_name} PRIVATE "${CMAKE_BINARY_DIR}/modules")

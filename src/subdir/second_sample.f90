@@ -1,15 +1,13 @@
 module second_sample
-implicit none
-private
-public :: answer
+   implicit none
+   private
+   public :: answer
 contains
 
-subroutine answer()
+   subroutine answer()
 
+      print *, "General Kenobi!"
 
-print *, "General Kenobi!"
-
-end subroutine answer
-
+   end subroutine answer
 
 end module second_sample

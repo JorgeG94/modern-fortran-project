@@ -1,10 +1,10 @@
 program main
-use sample, only: hello_there
-use second_sample, only: answer
-implicit none
+   use sample, only: hello_there
+   use second_sample, only: answer
+   implicit none
 
-call hello_there()
+   call hello_there()
 
-call answer()
+   call answer()
 
 end program main
