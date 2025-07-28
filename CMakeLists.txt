@@ -14,10 +14,11 @@ set(all_targets ${main_lib} ${exe_name})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(GNUInstallDirs)
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 # see cmake/ subdirectory for this
-include(print_status)
+include(demo_status)
 
 option(ENABLE_TESTING "Enable testing for ${project_name}" ON)
 
