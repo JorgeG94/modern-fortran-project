@@ -31,34 +31,33 @@ At the very top you have to change:
 
 ```
 project(
-  "YOUR_NAME"
+  "demo"
   LANGUAGES Fortran
   VERSION 0.0
   DESCRIPTION "ADD YOUR DESCRIPTION HERE")
 
 
-set(project_name your_project_name)
+set(project_name demo)
 set(main_lib ${project_name})
 set(exe_name exe_${project_name})
 set(all_targets ${main_lib} ${exe_name})
 ```
 
-Replace `"YOUR_NAME"` with the name of your project, say "demo".
+Replace `"demo"` with the name of your project.
 
-For the `set` commands, change the name on the RIGHT, i.e. `your_project_name` in this case, to "demo". This will
+For the `set` commands, change the name on the RIGHT, i.e. `demo`. This will
 cascade down.
 
 At the very bottom, change
 
 ```
-# RENAME YOUR sampleConfig.cmake.in to match ${project_name}Config.cmake
+# RENAME YOUR demoConfig.cmake.in to match ${your_new_name}Config.cmake
+# and change here sampleConfig.cmake.in to xyzConfig.cmake.in
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake/sampleConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/${project_name}Config.cmake"
   INSTALL_DESTINATION lib/cmake/${project_name})
 ```
-
-sampleConfig.cmake.in to demoConfig.cmake.in so that all of the files match.
 
 
 ## How to use the CMake build system
@@ -88,3 +87,11 @@ The repo also comes with a pre-commit that will ensure a formatting for your For
 python3 -m pip install pre-commit
 pre-commit install
 ```
+
+## Using your template repo in another project.
+
+This repo will install everything CMake needs to find the project. THe only thing you need to set is  `YOUR_PROJECT_NAME_ROOT=/path/to/install/location`
+
+And in your new project set `find_package(demo REQUIRED)`
+
+To then link to demo, you can simply add `demo::demo` to you `target_link_libraries(${tgt} PRIVATE demo::demo)`
