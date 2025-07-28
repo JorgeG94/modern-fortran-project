@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
+cmake_policy(SET CMP0144 NEW)
 
 project(
-  "YOUR_NAME"
+  "demo"
   LANGUAGES Fortran
   VERSION 0.0
   DESCRIPTION "ADD YOUR DESCRIPTION HERE")
 
-set(project_name your_project_name)
+set(project_name demo)
 set(main_lib ${project_name})
 set(exe_name exe_${project_name})
 set(all_targets ${main_lib} ${exe_name})
@@ -72,7 +73,7 @@ include(CMakePackageConfigHelpers)
 
 # RENAME YOUR sampleConfig.cmake.in to match ${project_name}Config.cmake
 configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/sampleConfig.cmake.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${project_name}Config.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/${project_name}Config.cmake"
   INSTALL_DESTINATION lib/cmake/${project_name})
 
