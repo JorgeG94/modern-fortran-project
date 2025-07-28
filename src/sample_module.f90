@@ -1,8 +1,8 @@
 module sample
-implicit none 
+implicit none
 private
 public :: hello_there
-contains 
+contains
 
 subroutine hello_there()
 

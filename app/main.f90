@@ -1,7 +1,7 @@
-program main 
-use sample, only: hello_there 
+program main
+use sample, only: hello_there
 use second_sample, only: answer
-implicit none 
+implicit none
 
 call hello_there()
 
